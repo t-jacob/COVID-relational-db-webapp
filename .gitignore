@@ -1,0 +1,6 @@
+/.idea/*
+/src/main/java/dbDesign/*
+/src/test/*
+/src/webapp/*
+/target/*
+HELP.md
