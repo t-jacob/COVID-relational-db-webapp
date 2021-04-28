@@ -117,12 +117,13 @@ Our web application implements the following navigation between class webpages:
   where the sample was obtained from. 
     
 ## Additional Information for Running the Application<a name="Info"></a>
-The application requires running the scripts `DemoApplication_finalProject.java` (included in the repository), as 
-well as `application.properties` (not included in the repository). These two scripts enable connection to the server 
-via the internet.
+The application requires running the scripts `/src/main/java/finalProject/DemoApplication_finalProject.java` as 
+well as `/src/main/resources/application.properties`. These two scripts enable connection to the server via the internet.
 
 ### A note about `application.properties`
 For this project to run as intended, we made the following changes in `application.properties`:
+* The MySQL connection was established by setting `dbDesign` as both the username and password. Please change the 
+  username and password found in `application.properties` to match the user credentials used to connect to MySQL.
 * we set `spring.jpa.hibernate.ddl-auto` equal to `none`, instead of `update`
   * this was done to prevent the creation of new SQL tables in our database and to prevent currently existing tables 
     from being modified.
@@ -131,4 +132,11 @@ For this project to run as intended, we made the following changes in `applicati
   * `spring.jpa.hibernate.naming.physical-strategy=org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl`
   * these changes were made to prevent additional SQL columns (using snake casing) from being created when the 
     necessary columns already exist (using camel casing)
-# cs3200-final
+
+### Other actions to take before running the application
+Prior to running `DemoApplication_finalProject.java`, make sure to establish a connection to MySQL and implement the 
+schemas found in `src/main/SQL`. Once these schemas are rendered, connect the classes found in 
+`src/main/java/finalProject/models` to the MySQL data source.
+
+The application will not run properly unless these changes are made, and the appropriate data source is mapped to the 
+java classes.
