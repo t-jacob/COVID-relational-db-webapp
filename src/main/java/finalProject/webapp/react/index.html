@@ -1,0 +1,60 @@
+<html lang="en">
+
+<!--list the dependencies that this document has with other documents-->
+<head>
+    <title>HOME</title>
+
+    <!--these "head" dependencies are just (optional) styling libraries that provide cleaner visual interface-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="index.css"/>
+</head>
+
+<body>                      <!--where the main content is rendered-->
+<div id="root"></div>       <!--single page application: dynamically add content to a single element `div` where application renders-->
+
+<!--React.js libraries that render dynamic content-->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-router-dom@5.2.0/umd/react-router-dom.min.js"></script>
+
+<!--USERS-->
+<!--communication with the server: fetches data from server and makes it available in the application-->
+<script src="users/user-service.js" type="text/jsx" data-type="module" data-plugins="transform-modules-umd"></script>
+<!--screen for editing a user's attributes with a form-->
+<script src="users/user-form-editor.js" type="text/jsx" data-type="module" data-plugins="transform-modules-umd"></script>
+<!--screen listing all users: renders dynamic data from server-->
+<script src="users/user-list.js" type="text/jsx" data-type="module" data-plugins="transform-modules-umd"></script>
+
+<!--TESTS-->
+<script src="tests/test-service.js" type="text/jsx" data-type="module" data-plugins="transform-modules-umd"></script>
+<script src="tests/test-form-editor.js" type="text/jsx" data-type="module" data-plugins="transform-modules-umd"></script>
+<script src="tests/test-list.js" type="text/jsx" data-type="module" data-plugins="transform-modules-umd"></script>
+
+<!--LABS-->
+<script src="labs/labs-service.js" type="text/jsx" data-type="module" data-plugins="transform-modules-umd"></script>
+<script src="labs/labs-form-editor.js" type="text/jsx" data-type="module" data-plugins="transform-modules-umd"></script>
+<script src="labs/labs-list.js" type="text/jsx" data-type="module" data-plugins="transform-modules-umd"></script>
+
+<!--RESULTS-->
+<script src="results/results-service.js" type="text/jsx" data-type="module" data-plugins="transform-modules-umd"></script>
+<script src="results/results-form-editor.js" type="text/jsx" data-type="module" data-plugins="transform-modules-umd"></script>
+<script src="results/results-list.js" type="text/jsx" data-type="module" data-plugins="transform-modules-umd"></script>
+
+<!--Root Component (entry point of application): lets us navigate between user-list and user-form-->
+<script src="index.js" type="text/jsx" data-type="module" data-plugins="transform-modules-umd"></script>
+
+<!--Render Root Component into an HTML root element (<div>) using ReactDOM-->
+<script type="text/jsx" data-type="module" data-plugins="transform-modules-umd">
+    import App from "index";                                    /*load application*/
+    ReactDOM.render(                                            /*render the application and dynamically load its contents into <div> element
+                                                                denoted with ID root*/
+        React.createElement(App),
+        document.getElementById('root')
+    );
+</script>
+</body>
+</html>
