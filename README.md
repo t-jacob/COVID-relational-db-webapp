@@ -135,7 +135,7 @@ For this project to run as intended, we made the following changes in `applicati
 
 ### Other actions to take before running the application
 Prior to running `DemoApplication_finalProject.java`, make sure to establish a connection to MySQL and implement the 
-schemas found in `src/main/SQL`. Once these schemas are rendered, connect the classes found in 
+schemas found in `src/main/sql`. Once these schemas are rendered, connect the classes found in 
 `src/main/java/finalProject/models` to the MySQL data source.
 
 The application will not run properly unless these changes are made, and the appropriate data source is mapped to the 
