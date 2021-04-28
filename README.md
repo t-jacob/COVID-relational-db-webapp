@@ -117,10 +117,15 @@ Our web application implements the following navigation between class webpages:
   where the sample was obtained from. 
     
 ## Additional Information for Running the Application<a name="Info"></a>
-The application requires running the scripts `/src/main/java/finalProject/DemoApplication_finalProject.java` as 
-well as `/src/main/resources/application.properties`. These two scripts enable connection to the server via the internet.
+
+### Importing the database
+The MySQL schemas that were created to store the data records are found in `database/`. Import the SQL scripts found 
+in this directory to set up the MySQL schema that this application runs off of.
 
 ### A note about `application.properties`
+The application requires running the scripts `/src/main/java/finalProject/DemoApplication_finalProject.java` as
+well as `/src/main/resources/application.properties`. These two scripts enable connection to the server via the internet.
+
 For this project to run as intended, we made the following changes in `application.properties`:
 * The MySQL connection was established by setting `dbDesign` as both the username and password. Please change the 
   username and password found in `application.properties` to match the user credentials used to connect to MySQL.
@@ -135,7 +140,7 @@ For this project to run as intended, we made the following changes in `applicati
 
 ### Other actions to take before running the application
 Prior to running `DemoApplication_finalProject.java`, make sure to establish a connection to MySQL and implement the 
-schemas found in `src/main/sql`. Once these schemas are rendered, connect the classes found in 
+schemas found in `database/`. Once these schemas are rendered, connect the classes found in 
 `src/main/java/finalProject/models` to the MySQL data source.
 
 The application will not run properly unless these changes are made, and the appropriate data source is mapped to the 
